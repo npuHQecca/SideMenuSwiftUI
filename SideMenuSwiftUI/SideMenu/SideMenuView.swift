@@ -52,7 +52,7 @@ struct SideMenuView: View {
                 Rectangle()
                     .fill(.white)
                     .frame(width: 270)
-                    .shadow(color: .purple.opacity(0.1), radius: 5, x: 0, y: 3)
+                    .shadow(color: .blue.opacity(0.1), radius: 5, x: 0, y: 3)
                 
                 VStack(alignment: .leading, spacing: 0) {
                     ProfileImageView()
@@ -91,19 +91,20 @@ struct SideMenuView: View {
                     .frame(width: 100, height: 100)
                     .overlay(
                         RoundedRectangle(cornerRadius: 50)
-                            .stroke(.purple.opacity(0.5), lineWidth: 10)
+                            .stroke(.blue.opacity(0.5), lineWidth: 10)
                     )
                     .cornerRadius(50)
                 Spacer()
             }
             
-            Text("Muhammad Abbas")
+            Text("Your name")
                 .font(.system(size: 18, weight: .bold))
                 .foregroundColor(.black)
             
-            Text("IOS Developer")
+            Text("date")
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(.black.opacity(0.5))
+            
         }
     }
     
@@ -114,7 +115,7 @@ struct SideMenuView: View {
             VStack(alignment: .leading){
                 HStack(spacing: 20){
                     Rectangle()
-                        .fill(isSelected ? .purple : .white)
+                        .fill(isSelected ? .blue : .white)
                         .frame(width: 5)
                     
                     ZStack{
@@ -134,8 +135,15 @@ struct SideMenuView: View {
         }
         .frame(height: 50)
         .background(
-            LinearGradient(colors: [isSelected ? .purple.opacity(0.5) : .white, .white], startPoint: .leading, endPoint: .trailing)
+            LinearGradient(colors: [isSelected ? .blue.opacity(0.5) : .white, .white], startPoint: .leading, endPoint: .trailing)
         )
     }
 }
-
+func RowView (isSelected: Bool, imageName: String, title: String, hideDivider: Bool = false, action: @escaping (()->())) ->
+some View{
+    Button{
+        action()
+    } label: {
+        VStack(alignment: , content: <#T##() -> _#>)
+    }
+}
